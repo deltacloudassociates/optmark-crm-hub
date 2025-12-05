@@ -1,1 +1,7 @@
 project_id = "syekkblvqrgtamhbteng"
+
+[functions.send-renewal-reminder]
+verify_jwt = false
+
+[functions.companies-house-lookup]
+verify_jwt = false

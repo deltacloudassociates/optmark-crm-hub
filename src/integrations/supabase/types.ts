@@ -14,7 +14,269 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      business_clients: {
+        Row: {
+          accounts_due_by: string | null
+          accounts_last_made_up_to: string | null
+          accounts_next_made_up_to: string | null
+          category: string | null
+          company_name: string
+          company_number: string
+          company_status: string | null
+          company_type: string | null
+          confirmation_due_by: string | null
+          confirmation_last_date: string | null
+          confirmation_next_date: string | null
+          created_at: string
+          id: string
+          incorporation_date: string | null
+          kyc_id_expiry: string | null
+          kyc_id_number: string | null
+          kyc_id_type: string | null
+          kyc_poa_issue_date: string | null
+          kyc_poa_type: string | null
+          kyc_status: string | null
+          notes: string | null
+          paye_reference: string | null
+          primary_contact_email: string | null
+          primary_contact_name: string | null
+          primary_contact_phone: string | null
+          registered_office_address: string | null
+          services: string[] | null
+          status: string | null
+          updated_at: string
+          user_id: string | null
+          utr_number: string | null
+          vat_number: string | null
+          vat_registered: boolean | null
+        }
+        Insert: {
+          accounts_due_by?: string | null
+          accounts_last_made_up_to?: string | null
+          accounts_next_made_up_to?: string | null
+          category?: string | null
+          company_name: string
+          company_number: string
+          company_status?: string | null
+          company_type?: string | null
+          confirmation_due_by?: string | null
+          confirmation_last_date?: string | null
+          confirmation_next_date?: string | null
+          created_at?: string
+          id?: string
+          incorporation_date?: string | null
+          kyc_id_expiry?: string | null
+          kyc_id_number?: string | null
+          kyc_id_type?: string | null
+          kyc_poa_issue_date?: string | null
+          kyc_poa_type?: string | null
+          kyc_status?: string | null
+          notes?: string | null
+          paye_reference?: string | null
+          primary_contact_email?: string | null
+          primary_contact_name?: string | null
+          primary_contact_phone?: string | null
+          registered_office_address?: string | null
+          services?: string[] | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+          utr_number?: string | null
+          vat_number?: string | null
+          vat_registered?: boolean | null
+        }
+        Update: {
+          accounts_due_by?: string | null
+          accounts_last_made_up_to?: string | null
+          accounts_next_made_up_to?: string | null
+          category?: string | null
+          company_name?: string
+          company_number?: string
+          company_status?: string | null
+          company_type?: string | null
+          confirmation_due_by?: string | null
+          confirmation_last_date?: string | null
+          confirmation_next_date?: string | null
+          created_at?: string
+          id?: string
+          incorporation_date?: string | null
+          kyc_id_expiry?: string | null
+          kyc_id_number?: string | null
+          kyc_id_type?: string | null
+          kyc_poa_issue_date?: string | null
+          kyc_poa_type?: string | null
+          kyc_status?: string | null
+          notes?: string | null
+          paye_reference?: string | null
+          primary_contact_email?: string | null
+          primary_contact_name?: string | null
+          primary_contact_phone?: string | null
+          registered_office_address?: string | null
+          services?: string[] | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+          utr_number?: string | null
+          vat_number?: string | null
+          vat_registered?: boolean | null
+        }
+        Relationships: []
+      }
+      company_officers: {
+        Row: {
+          appointed_date: string | null
+          business_client_id: string
+          correspondence_address: string | null
+          country_of_residence: string | null
+          created_at: string
+          date_of_birth_month: number | null
+          date_of_birth_year: number | null
+          id: string
+          is_primary_contact: boolean | null
+          nationality: string | null
+          occupation: string | null
+          officer_name: string
+          officer_role: string
+          resigned_date: string | null
+        }
+        Insert: {
+          appointed_date?: string | null
+          business_client_id: string
+          correspondence_address?: string | null
+          country_of_residence?: string | null
+          created_at?: string
+          date_of_birth_month?: number | null
+          date_of_birth_year?: number | null
+          id?: string
+          is_primary_contact?: boolean | null
+          nationality?: string | null
+          occupation?: string | null
+          officer_name: string
+          officer_role: string
+          resigned_date?: string | null
+        }
+        Update: {
+          appointed_date?: string | null
+          business_client_id?: string
+          correspondence_address?: string | null
+          country_of_residence?: string | null
+          created_at?: string
+          date_of_birth_month?: number | null
+          date_of_birth_year?: number | null
+          id?: string
+          is_primary_contact?: boolean | null
+          nationality?: string | null
+          occupation?: string | null
+          officer_name?: string
+          officer_role?: string
+          resigned_date?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "company_officers_business_client_id_fkey"
+            columns: ["business_client_id"]
+            isOneToOne: false
+            referencedRelation: "business_clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      individual_clients: {
+        Row: {
+          address_line1: string | null
+          address_line2: string | null
+          category: string | null
+          city: string | null
+          country: string | null
+          created_at: string
+          date_of_birth: string | null
+          duplicate_check_notes: string | null
+          email: string | null
+          first_name: string
+          id: string
+          kyc_id_expiry: string | null
+          kyc_id_number: string | null
+          kyc_id_type: string | null
+          kyc_poa_issue_date: string | null
+          kyc_poa_type: string | null
+          kyc_selfie_verified: boolean | null
+          kyc_status: string | null
+          last_name: string
+          ni_number: string | null
+          notes: string | null
+          phone: string | null
+          postcode: string | null
+          services: string[] | null
+          status: string | null
+          title: string | null
+          updated_at: string
+          user_id: string | null
+          utr_number: string | null
+        }
+        Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          category?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          duplicate_check_notes?: string | null
+          email?: string | null
+          first_name: string
+          id?: string
+          kyc_id_expiry?: string | null
+          kyc_id_number?: string | null
+          kyc_id_type?: string | null
+          kyc_poa_issue_date?: string | null
+          kyc_poa_type?: string | null
+          kyc_selfie_verified?: boolean | null
+          kyc_status?: string | null
+          last_name: string
+          ni_number?: string | null
+          notes?: string | null
+          phone?: string | null
+          postcode?: string | null
+          services?: string[] | null
+          status?: string | null
+          title?: string | null
+          updated_at?: string
+          user_id?: string | null
+          utr_number?: string | null
+        }
+        Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          category?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          duplicate_check_notes?: string | null
+          email?: string | null
+          first_name?: string
+          id?: string
+          kyc_id_expiry?: string | null
+          kyc_id_number?: string | null
+          kyc_id_type?: string | null
+          kyc_poa_issue_date?: string | null
+          kyc_poa_type?: string | null
+          kyc_selfie_verified?: boolean | null
+          kyc_status?: string | null
+          last_name?: string
+          ni_number?: string | null
+          notes?: string | null
+          phone?: string | null
+          postcode?: string | null
+          services?: string[] | null
+          status?: string | null
+          title?: string | null
+          updated_at?: string
+          user_id?: string | null
+          utr_number?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
